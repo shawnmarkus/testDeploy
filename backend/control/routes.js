@@ -48,8 +48,6 @@ routePath.route("/sendOTP").post(verifyEssentialDetail);
 //verify mobile number and email
 routePath.route("/verifyOTP").post(verifyOTP);
 
-// forgotPassword
-
 // resetpassword
 routePath.route("/resetpassword").put(resetpassword);
 
