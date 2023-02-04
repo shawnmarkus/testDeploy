@@ -17,7 +17,7 @@ export default {
 <style scoped>
 main {
   width: 100vw;
-  height: calc(100vh - 3.6rem);
+  height: calc(100vh - 4.5rem);
   background-color: aliceblue;
   display: flex;
   place-items: center;

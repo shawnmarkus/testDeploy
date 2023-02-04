@@ -153,7 +153,7 @@ export default {
     >
     </v-alert>
 
-    <v-tabs v-model="tab" bg-color="#00bd7e">
+    <v-tabs height="75" v-model="tab" bg-color="#00bd7e">
       <!-- <v-tag></v-tag> -->
       <v-tab value="tab-1" :disabled="this.isEligible !== false">
         <div class="v-tabs">email</div>
@@ -179,7 +179,9 @@ export default {
             v-model="email"
           />
           <!-- <v-card-actions class="leftPadding"> -->
-          <v-btn color="green" @click="sendOTPtoEmail">Proceed</v-btn>
+          <v-btn class="btn" color="green" @click="sendOTPtoEmail"
+            >Proceed</v-btn
+          >
           <!-- </v-card-actions> -->
         </v-card>
       </v-window-item>
@@ -194,7 +196,7 @@ export default {
               v-model="OTP"
             />
             <!-- <v-card-actions class="leftPadding"> -->
-            <v-btn color="green" @click="verifyOTP">Proceed</v-btn>
+            <v-btn class="btn" color="green" @click="verifyOTP">Proceed</v-btn>
             <!-- </v-card-actions> -->
           </v-card>
         </v-card>
@@ -216,7 +218,9 @@ export default {
             v-model="confirmPasswrd"
           />
           <!-- <v-card-actions class="leftPadding"> -->
-          <v-btn color="green" @click="sendRequestToChangePassword">Done</v-btn>
+          <v-btn class="btn" color="green" @click="sendRequestToChangePassword"
+            >Done</v-btn
+          >
           <!-- </v-card-actions> -->
         </v-card>
       </v-window-item>
@@ -225,22 +229,31 @@ export default {
 </template>
 
 <style scoped>
+.btn {
+  font-size: 1rem;
+  padding: 0rem 2.5rem;
+  margin-top: 1rem;
+  height: 3rem;
+}
 .v-tabs {
   text-align: center;
   display: flex;
   align-items: center;
+  font-size: 1rem;
 }
 .container {
-  margin: 2rem;
-  width: calc(100% - 4rem);
+  margin: 2.5rem;
+  width: calc(100% - 5rem);
 }
 
 input {
+  font-size: 1.25rem;
+
   width: 100%;
   background-color: rgba(206, 206, 206, 0.46);
-  padding: 0.5rem 0.6rem;
+  padding: 0.75rem 0.8rem;
   border-radius: 5px 5px 0 0;
-  border-bottom: 0.7px solid black;
+  border-bottom: 1px solid black;
   outline: 0;
   margin-bottom: 1rem;
 }

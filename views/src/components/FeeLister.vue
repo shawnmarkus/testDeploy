@@ -179,7 +179,11 @@ export default defineComponent({
         />
       </v-card-actions>
       <v-card-actions>
-        <v-btn color="red" @click="deleteTheStudentFromPendingQueue(value._id)">
+        <v-btn
+          color="red"
+          class="btn"
+          @click="deleteTheStudentFromPendingQueue(value._id)"
+        >
           Delete
         </v-btn>
       </v-card-actions>
@@ -210,10 +214,15 @@ export default defineComponent({
 </template>
 
 <style scoped>
+.btn {
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
 .v-card {
   display: grid;
-  grid-template-columns: auto 6.5rem 6.5rem;
-  margin-bottom: 1rem;
+  grid-template-columns: auto 8rem 8rem;
+  margin-bottom: 1.25rem;
   /* justify-content: space-between;
   
   align-items: center; */
@@ -223,7 +232,7 @@ export default defineComponent({
   align-self: center;
   /* justify-content: flex-start; */
   justify-self: flex-start;
-  padding-left: 2rem;
+  padding-left: 2.5rem;
 }
 .cardWrapper {
   color: bue;
@@ -235,6 +244,6 @@ export default defineComponent({
 }
 
 .v-list-subheader {
-  font-size: 1.5rem;
+  font-size: 1.84rem;
 }
 </style>

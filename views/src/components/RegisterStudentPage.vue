@@ -224,9 +224,10 @@ export default {
         <v-card>
           <DialogForFeeUpload :formData="formData" />
           <v-card-actions class="leftPadding">
-            <v-btn color="red" @click="toggleDialog">Return</v-btn>
+            <v-btn class="btn" color="red" @click="toggleDialog">Return</v-btn>
 
             <v-btn
+              class="btn"
               color="green"
               @click="
                 submitForm();
@@ -242,38 +243,45 @@ export default {
 </template>
 
 <style scoped>
+.btn {
+  margin-top: 1.5rem;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
 .Register_master_container {
-  padding: 1rem;
+  padding: 1.25rem;
   color: black;
   min-width: 40%;
   min-height: 50%;
 }
 
 .leftPadding {
-  padding-left: 2rem;
-  padding-bottom: 1.5rem;
+  padding-left: 2.5rem;
+  padding-bottom: 1.85rem;
 }
 
 form {
-  margin: 2rem 1.5rem;
+  margin: 2.5rem 1.85rem;
 }
 
 input {
   width: 100%;
   background-color: rgba(206, 206, 206, 0.46);
-  padding: 0.5rem 0.6rem;
+  padding: 0.75rem 0.8rem;
   border-radius: 5px 5px 0 0;
   border-bottom: 0.7px solid black;
   outline: 0;
 }
 
 .input-box-container {
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
 }
 
 .submit-Btn {
-  padding: 1.3rem 2rem;
-  margin-top: 1.5rem;
+  padding: 1.62rem 2.5rem;
+  font-size: 1rem;
+  margin-top: 1.85rem;
 }
 
 .radioConatiner {
@@ -283,23 +291,23 @@ input {
 
 .optioncontainer {
   display: flex;
-  margin: 0 1rem;
+  margin: 0 1.25rem;
 }
 
 #studentType {
   background-color: rgb(206, 206, 206, 0.46);
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.625rem;
   outline: 0;
 }
 
 select {
   background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>")
     no-repeat;
-  background-position: calc(100% - 0.75rem) center !important;
+  background-position: calc(100% - 0.94rem) center !important;
   -moz-appearance: none !important;
   -webkit-appearance: none !important;
   appearance: none !important;
-  padding-right: 2rem !important;
+  padding-right: 2.5rem !important;
 }
 
 button {

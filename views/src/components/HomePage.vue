@@ -62,8 +62,8 @@ export default {
   height: calc(calc(100% - 1rem) / 2); */
   width: 95%;
   height: 95%;
-  padding: 0rem 2rem 0 2rem;
-  border-radius: 1rem;
+  padding: 0rem 2.5rem 0 2.5rem;
+  border-radius: 1.25rem;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 15px #ffffff;
   /* overflow-y: scroll; */
@@ -75,7 +75,8 @@ export default {
 
 .titleName {
   border-bottom: 1px solid black;
-  /* margin-bottom: 1.5rem; */
+  margin-bottom: 1.5rem;
+  margin-top: -2rem;
 }
 .svg-container {
   display: flex;
@@ -84,12 +85,12 @@ export default {
   position: sticky;
   top: 0;
   /* z-index: 10; */
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .titleName h1 {
-  padding-left: 1rem;
-  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-bottom: 0.625rem;
   font-weight: 700;
 }
 

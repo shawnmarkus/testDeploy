@@ -120,10 +120,10 @@ export default defineComponent({
 
 main {
   width: 100vw;
-  height: calc(100vh - 3.6rem);
+  height: calc(100vh - 4.5rem);
   background-color: aliceblue;
   color: black;
-  padding: 2rem;
+  padding: 2.5rem;
 }
 
 .centerTheContent {
@@ -138,7 +138,7 @@ main {
 
 .uploadPart {
   grid-area: uploadPart;
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 15px #ffffff;
   width: 100%;
@@ -173,7 +173,7 @@ main {
   height: 95%;
   grid-gap: 0.5rem;
   justify-self: center;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 ::-webkit-scrollbar {

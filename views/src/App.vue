@@ -49,13 +49,13 @@ export default {
 
 <style scoped>
 nav {
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-align: center;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 nav a {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   border-left: 1px solid var(--color-border);
 }
 

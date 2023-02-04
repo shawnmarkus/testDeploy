@@ -14,7 +14,7 @@ import FeesUpload from "../components/FeesUpload.vue";
 <style scoped>
 main {
   width: 100vw;
-  height: calc(100vh - 3.6rem);
+  height: calc(100vh - 4.5rem);
   background-color: aliceblue;
   display: flex;
   place-items: center;
@@ -40,6 +40,6 @@ main {
   font-weight: bold;
   box-shadow: 0px 2px 4px 1px rgba(155, 155, 155, 0.585);
 
-  padding: 0.5rem 2rem;
+  padding: 0.75rem 2.5rem;
 }
 </style>

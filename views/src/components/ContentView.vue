@@ -140,7 +140,7 @@ export default {
   <v-card>
     <v-toolbar color="hsla(160, 100%, 37%, 1)" title="Pending Status list ">
       <v-card-actions class="justify-end">
-        <v-btn variant="text" @click="closeTheDialog">Close</v-btn>
+        <v-btn class="btn" variant="text" @click="closeTheDialog">Close</v-btn>
       </v-card-actions>
     </v-toolbar>
     <!-- <v-card-text> -->
@@ -191,6 +191,7 @@ export default {
 
           <v-card-actions class="justify-end">
             <v-btn
+              class="btn"
               variant="text"
               @click="
                 verifyTheFeeDoc({
@@ -202,6 +203,7 @@ export default {
               >Accept</v-btn
             >
             <v-btn
+              class="btn"
               variant="text"
               @click="
                 verifyTheFeeDoc({
@@ -222,6 +224,11 @@ export default {
 </template>
 
 <style scoped>
+.btn {
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
 .v-toolbar {
   color: beige;
 }
@@ -237,13 +244,13 @@ export default {
 }
 .left {
   overflow-y: scroll;
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
 }
 .right {
   /* background-color: blue; */
   box-shadow: inset 0 0 20px 10px rgb(162, 162, 162);
-  max-height: calc(100vh - 4rem);
-  padding: 2rem;
+  max-height: calc(100vh - 5rem);
+  padding: 2.5rem;
   display: grid;
   grid-template-rows: 85% 15%;
 }
@@ -257,11 +264,11 @@ export default {
 .insiderLeft > h2 {
   position: sticky;
   z-index: 100;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   background-color: #00337c;
   top: 0;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2.5rem;
 }
 
 .rightUpper {
@@ -280,7 +287,7 @@ export default {
   height: 100%;
   background-color: rgb(107, 107, 249);
   display: flex;
-  padding: 1rem;
+  padding: 1.25rem;
   justify-content: space-around;
 }
 .rightLower > .v-card-actions > .v-btn:first-child {
@@ -292,7 +299,7 @@ export default {
 }
 
 .rightLower > .v-card-actions > .v-btn {
-  padding: 0.5rem 1.5rem;
+  padding: 0.65rem 1.85rem;
   color: white;
 }
 

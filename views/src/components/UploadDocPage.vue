@@ -67,11 +67,14 @@ export default {
   /* border-radius: 1rem;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 15px #ffffff; */
-  padding: 2rem;
+  padding: 2.5rem;
 }
 
 .btn {
   margin-top: 1.5rem;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 .left form,
 input {
@@ -80,7 +83,7 @@ input {
 
 .right {
   width: 70%;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 /* .btn {

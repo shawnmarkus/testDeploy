@@ -64,17 +64,14 @@ export default {
     >
       <!-- <v-card-item v-if="item.status === 'pending'"> -->
       <v-card-item>
-        <v-card-title>
-          {{ item.doc_url }}
-        </v-card-title>
+        <v-card-title> Name : {{ item.doc_url }} </v-card-title>
 
-        <v-card-title>
-          {{ item.status }}
-        </v-card-title>
+        <v-card-title> Status : {{ item.status }} </v-card-title>
 
         <v-card-subtitle>Amount: &nbsp;{{ item.feesAmount }}</v-card-subtitle>
         <v-card-actions>
           <v-btn
+            class="btn"
             @click="
               setSelected({
                 id: item._id,
@@ -92,12 +89,18 @@ export default {
 </template>
 
 <style scoped>
+.btn {
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
 .displayNone {
   display: none !important;
   margin: 0 !important;
 }
 .v-card {
   margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
 }
 .v-btn {
   background-color: rgba(151, 151, 151, 0.717);
@@ -105,8 +108,9 @@ export default {
 }
 .v-card-title,
 .v-card-subtitle {
-  font-size: 1rem;
-  padding: 0 1rem;
+  font-size: 1.25rem;
+  padding: 0 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .selectedCardCss {

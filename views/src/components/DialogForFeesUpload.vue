@@ -62,7 +62,7 @@ export default {
   background: red;
 } */
 .pad-left {
-  padding-left: 1rem;
+  padding-left: 1.25rem;
 }
 
 .bolder {
@@ -70,6 +70,6 @@ export default {
 }
 
 .largeFont {
-  font-size: large;
+  font-size: 1.3rem;
 }
 </style>

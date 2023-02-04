@@ -104,6 +104,11 @@ export default {
 </template>
 
 <style scoped>
+.btn {
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
 .leftButton,
 .rightButton {
   z-index: 1000;

@@ -50,17 +50,17 @@ export default defineComponent({
 <style scoped>
 .mainEnclosingContainer {
   width: 100vw;
-  height: calc(100vh - 3.6rem);
+  height: calc(100vh - 4.5rem);
   background-color: aliceblue;
   color: black;
-  padding: 2rem;
+  padding: 2.5rem;
 
   /* overflow: scroll; */
 }
 
 .secondaryContainer {
   width: 100%;
-  height: calc(100vh - 3.6rem - 4rem);
+  height: calc(100vh - 4.5rem - 5rem);
   box-shadow: 0px 0px 15px 6px rgba(155, 155, 155, 0.585);
 }
 .secondaryContainer h1 {
@@ -68,15 +68,15 @@ export default defineComponent({
   font-weight: 600;
   background-color: hsla(160, 100%, 37%, 1);
   /* color: hsla(160, 100%, 37%, 1); */
-  font-size: 2rem;
+  font-size: 2.5rem;
 
-  padding: 0.5rem 2rem;
+  padding: 0.625rem 2.5rem;
 }
 
 .lowerPart {
   width: 100%;
   word-break: break-word;
   padding: 0.5rem 1rem;
-  height: calc(100vh - 3.6rem - 4rem - 1rem - 3.25rem);
+  height: calc(100vh - 4.5rem - 5rem - 1.25rem - 4.1rem);
 }
 </style>

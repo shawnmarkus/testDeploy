@@ -129,12 +129,12 @@ export default {
 .title {
   color: green;
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.5rem;
-  padding-left: 0.5rem;
+  font-size: 1.9rem;
+  padding-left: 0.75rem;
   /* border-bottom: 1px solid rgba(2, 2, 2, 0.55); */
 }
 hr {
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 0.75rem 0 0.75rem 0;
   width: 100%;
 }
 .Login_master_container {
@@ -147,25 +147,26 @@ hr {
 }
 
 form {
-  margin: 2rem 1.5rem;
+  margin: 2.5rem 1.9rem;
 }
 
 input {
   width: 100%;
   background-color: rgba(206, 206, 206, 0.46);
-  padding: 0.5rem 0.6rem;
+  padding: 0.7rem 0.75rem;
   border-radius: 5px 5px 0 0;
   border-bottom: 0.7px solid black;
   outline: 0;
 }
 
 .input-box-container {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .submit-Btn {
-  padding: 1.3rem 2rem;
-  margin-top: 1.5rem;
+  padding: 1.7rem 2.5rem;
+  margin-top: 1.8rem;
+  font-size: 1rem;
 }
 
 .options {
@@ -190,13 +191,14 @@ button {
   height: fit-content;
   padding: 0;
   box-shadow: none;
-  font-size: 12px;
+  font-size: 1.25;
   background: transparent;
 }
 
 .dialogBoxForEmail {
   align-self: center;
   width: 60%;
+  height: fit-content;
 }
 
 .forgotPasswordForm {
@@ -205,10 +207,5 @@ button {
 
 .v-dialog {
   background-color: rgba(57, 57, 57, 0.625);
-}
-
-.submitBtnForEmailSending {
-  /* color: var(--color-text); */
-  margin-top: 1rem;
 }
 </style>

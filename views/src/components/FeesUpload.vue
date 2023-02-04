@@ -105,8 +105,9 @@ export default {
           name="currentSession"
           v-model="selectedYear"
           id="currentSession"
+          class="select"
         >
-          <option value="" disabled selected>Select year</option>
+          <option class="option" value="" disabled selected>Select year</option>
           <option v-for="year in years" :key="year" :value="year">
             {{ year }}
           </option>
@@ -164,7 +165,7 @@ export default {
 
     <!-- button to submit -->
     <div class="bottonDiv">
-      <v-btn color="green" @click="setIsActive">preview</v-btn>
+      <v-btn class="btn" color="green" @click="setIsActive"> preview </v-btn>
     </div>
 
     <v-dialog persistant v-model="isActive" width="600">
@@ -172,9 +173,10 @@ export default {
       <v-card>
         <DialogForFeeUpload :formData="feesFormData" />
         <v-card-actions class="spaceBetween leftPadding">
-          <v-btn color="red" @click="toggleDialog">Return</v-btn>
+          <v-btn class="btn" color="red" @click="toggleDialog">Return</v-btn>
 
           <v-btn
+            class="btn"
             color="green"
             @click="
               submitForm();
@@ -189,6 +191,11 @@ export default {
 </template>
 
 <style scoped>
+.btn {
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
 .spaceBetween {
   display: flex;
   justify-content: space-around;
@@ -218,12 +225,11 @@ select {
   -moz-appearance: none !important;
   -webkit-appearance: none !important;
   appearance: none !important;
-  padding-right: 2rem !important;
   background-color: rgb(206, 206, 206, 0.46);
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 1rem;
   outline: 0;
-  height: 2rem;
-  margin-bottom: 1.5rem;
+  height: 3rem;
+  margin: 0.5rem 0;
 }
 
 .gridBox {
@@ -249,7 +255,7 @@ select {
 .title {
   color: black;
   font-weight: 1000;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
   border-bottom: 1px solid black;
@@ -267,10 +273,6 @@ input {
 
 .bottonDiv {
   padding-left: 1rem;
-}
-
-.bottonDiv .v-btn {
-  height: 100%;
 }
 
 .feesBoxContainer {
