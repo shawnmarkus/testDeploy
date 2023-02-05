@@ -10,7 +10,7 @@ const router = createRouter({
       name: "home",
       component: HomeView,
       beforeEnter(to, from, next) {
-        if (store.getters.userRole === "student") {
+        if (store.getters.isLoggedIn && store.getters.userRole === "student") {
           next();
         } else {
           next("/invalid_request");
