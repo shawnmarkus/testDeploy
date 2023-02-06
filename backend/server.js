@@ -38,7 +38,6 @@ app.use(
     origin: process.env.ORIGIN,
     credentials: true,
     exposedHeaders: "set-cookie",
-    methods: ["PUT", "POST", "DELETE", "GET", "PATCH"],
   })
 );
 
