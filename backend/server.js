@@ -5,6 +5,7 @@ const routes = require("./control/routes");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const { none } = require("./utility/multer");
 
 // for verification of token
 // const verifyToken = require("./utility/verifyToken");
@@ -37,7 +38,6 @@ app.use(
     origin: process.env.ORIGIN,
     credentials: true,
     exposedHeaders: "set-cookie",
-    methods: ["PUT", "POST", "DELETE", "GET", "PATCH"],
   })
 );
 
