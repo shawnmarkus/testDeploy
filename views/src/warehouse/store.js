@@ -22,6 +22,8 @@ const store = createStore({
     logout(state) {
       sessionStorage.removeItem("userRole");
       sessionStorage.removeItem("isLoggedIn");
+      state.userRole = null;
+      state.isLoggedIn = false;
     },
   },
   actions: {
@@ -29,7 +31,7 @@ const store = createStore({
       let response = "";
       try {
         response = await axios.post(
-          "http://localhost:5001/login",
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/login",
           {
             RollNumber: formData.userID,
             password: formData.password,
@@ -59,10 +61,13 @@ const store = createStore({
     async logout({ commit }) {
       //   var dd = "sjksaj";
       let resp = await axios
-        .get("http://localhost:5001/logout", {
-          withCredentials: true,
-          crossDomain: true,
-        })
+        .get(
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/logout",
+          {
+            withCredentials: true,
+            crossDomain: true,
+          }
+        )
         .then((data) => {
           commit("logout");
           console.log(data);

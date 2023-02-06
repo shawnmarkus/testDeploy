@@ -32,9 +32,13 @@ export default {
       // Send formData to server or handle it in some other way
       console.log("formdata:", this.formData);
       axios
-        .post("http://localhost:5001/register", this.formData, {
-          crossDomain: true,
-        })
+        .post(
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/register",
+          this.formData,
+          {
+            crossDomain: true,
+          }
+        )
         .then((data) => {
           console.log("YOU GOT REGISTERED ", data);
           this.$router.replace("/login");

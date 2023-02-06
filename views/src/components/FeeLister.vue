@@ -114,13 +114,16 @@ export default defineComponent({
         route.path
       );
       await axios
-        .delete("http://localhost:5001/admin/", {
-          withCredentials: true,
-          crossDomian: true,
-          data: {
-            id: id,
-          },
-        })
+        .delete(
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/admin/",
+          {
+            withCredentials: true,
+            crossDomian: true,
+            data: {
+              id: id,
+            },
+          }
+        )
         .then((response) => {
           console.log(response);
           location.reload();

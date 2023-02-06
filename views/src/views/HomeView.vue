@@ -20,10 +20,13 @@ export default defineComponent({
     onBeforeMount(async () => {
       // console.log("pehle aaya ");
       let response = await axios
-        .get("http://localhost:5001/student", {
-          withCredentials: true,
-          crossDomain: true,
-        })
+        .get(
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/student",
+          {
+            withCredentials: true,
+            crossDomain: true,
+          }
+        )
 
         .catch((error) => {
           if (error.response.data.msg) {

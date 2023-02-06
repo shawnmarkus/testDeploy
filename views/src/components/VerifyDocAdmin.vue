@@ -12,10 +12,13 @@ export default defineComponent({
     });
     onBeforeMount(async () => {
       await axios
-        .get("http://localhost:5001/admin", {
-          withCredentials: true,
-          crossDomain: true,
-        })
+        .get(
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/admin",
+          {
+            withCredentials: true,
+            crossDomain: true,
+          }
+        )
         .then((resp) => {
           data.list = resp.data.data[0].pendingRequestQueue;
           store.state["list"] = resp.data.data[0].pendingRequestQueue;

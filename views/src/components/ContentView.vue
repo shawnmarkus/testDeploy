@@ -71,7 +71,7 @@ export default {
       console.log(valueSet, "tail to student");
 
       const docStatusResponse = await axios.patch(
-        "http://localhost:5001/admin",
+        "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/admin",
         valueSet,
         {
           withCredentials: true,

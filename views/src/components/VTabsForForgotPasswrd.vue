@@ -35,7 +35,7 @@ export default {
 
       let response = await axios
         .post(
-          "http://localhost:5001/sendOTP",
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/sendOTP",
           { email: this.email },
           {
             withCredentials: true,
