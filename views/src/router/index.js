@@ -20,7 +20,6 @@ const router = createRouter({
         requiresAuth: true,
       },
     },
-
     {
       path: "/admin/verify",
       name: "verify",
@@ -47,6 +46,13 @@ const router = createRouter({
       path: "/login",
       name: "loginPage",
       component: () => import("../views/LoginPageView.vue"),
+      beforeEnter(to, from, next) {
+        if (store.getters.isLoggedIn) {
+          store.dispatch("logout");
+          next("");
+        }
+        next();
+      },
     },
 
     {
@@ -80,24 +86,14 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.name === "login" && store.getters.isLoggedIn) {
-    store.dispatch("logout");
-    next("/login");
-  }
-
   if (to.meta.requiresAuth && !store.getters.isLoggedIn) {
     next({
       path: "/login",
     });
   } else {
-    // write a login to check wheater the  requested page in present in the $route
+    // write a login to check wheater the asked request page in present in the $route
     next(); // make sure to always call next()!
   }
 });
-
-// router.beforeEach((to, from, next) => {
-//   console.log("he?");
-//   next();
-// });
 
 export default router;
