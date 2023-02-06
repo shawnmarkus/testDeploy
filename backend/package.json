@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shawnmarkus/testdeplay.git"
+    "url": "git+https://github.com/shawnmarkus/testdeploy.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shawnmarkus/testdeplay/issues"
+    "url": "https://github.com/shawnmarkus/testdeploy/issues"
   },
-  "homepage": "https://github.com/shawnmarkus/testdeplay#readme",
+  "homepage": "https://github.com/shawnmarkus/testdeploy#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
