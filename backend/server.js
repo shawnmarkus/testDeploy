@@ -24,6 +24,7 @@ try {
   console.log("error hai bro", error);
 }
 
+// console.log(process.env.EMAIL_SERVICE);
 // creating express instance
 var app = express();
 
@@ -33,16 +34,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.ORIGIN,
     credentials: true,
+    exposedHeaders: "set-cookie",
   })
 );
 
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Credentials", "true");
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 // embedding routes
 app.use(routes);
