@@ -41,6 +41,11 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  res.setHeader("Set-Cookie", "name=value; SameSite=None; Secure;");
+  next();
+});
+
 // embedding routes
 app.use(routes);
 
