@@ -95,6 +95,7 @@ const login = async (req, res) => {
     res.cookie("token", usrToken, {
       httpOnly: true,
       maxAge: 60 * 1000 * 24 * 60,
+      sameSite: false,
     }); //taking the tenure of the cookies is equal to the life span of the jwt
 
     return (
