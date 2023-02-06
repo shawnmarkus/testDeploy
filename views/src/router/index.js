@@ -20,6 +20,7 @@ const router = createRouter({
         requiresAuth: true,
       },
     },
+
     {
       path: "/admin/verify",
       name: "verify",
@@ -89,7 +90,7 @@ router.beforeEach((to, from, next) => {
       path: "/login",
     });
   } else {
-    // write a login to check wheater the asked request page in present in the $route
+    // write a login to check wheater the  requested page in present in the $route
     next(); // make sure to always call next()!
   }
 });
