@@ -37,13 +37,9 @@ app.use(
     origin: process.env.ORIGIN,
     credentials: true,
     exposedHeaders: "set-cookie",
+    methods: ["PUT", "POST", "DELETE", "GET", "PATCH"],
   })
 );
-
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
 
 // embedding routes
 app.use(routes);
