@@ -7,7 +7,8 @@ export default {
       console.log("singout");
       await this.$store.dispatch("logout").then((data) => {
         console.log("refresh page");
-        window.location = "/login";
+        // window.location = "/login";
+        this.$router.replace("/login");
       });
     },
   },
