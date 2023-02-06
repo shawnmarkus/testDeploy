@@ -1,10 +1,9 @@
 node_modules
-/constant/secrets
-/post.js
+/backend/constant/secrets
+/backend/post.js
 /testAPI.http
 /*.env
 
-config.env
 
 
 
