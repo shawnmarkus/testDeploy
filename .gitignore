@@ -2,3 +2,4 @@ node_modules
 /constant/secrets
 /post.js
 /testAPI.http
+/*.env
