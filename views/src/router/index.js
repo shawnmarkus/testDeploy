@@ -79,6 +79,11 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  if (to.name === "login" && store.getters.isLoggedIn) {
+    store.dispatch("logout");
+    next("/login");
+  }
+
   if (to.meta.requiresAuth && !store.getters.isLoggedIn) {
     next({
       path: "/login",
