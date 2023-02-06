@@ -1,7 +1,7 @@
 node_modules
-/backend/constant/secrets
 /backend/post.js
 /testAPI.http
+
 
 
 
