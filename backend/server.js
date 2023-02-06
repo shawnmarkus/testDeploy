@@ -38,13 +38,9 @@ app.use(
     origin: process.env.ORIGIN,
     credentials: true,
     exposedHeaders: "set-cookie",
+    methods: ["PUT", "POST", "DELETE", "GET", "PATCH"],
   })
 );
-
-app.use((req, res, next) => {
-  res.setHeader("Set-Cookie", "SameSite=None;");
-  next();
-});
 
 // embedding routes
 app.use(routes);
