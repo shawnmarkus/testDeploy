@@ -9,7 +9,7 @@ const schema = mongoose.Schema(
 
     feesType: {
       type: String,
-      enum: ["feewaiver", "hosteler", "nonhostler", "extra"],
+      enum: ["hosteller", "nonhosteller", "feewaiver", "extra"],
       required: true,
     },
 
