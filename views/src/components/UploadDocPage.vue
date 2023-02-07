@@ -17,7 +17,7 @@ export default {
       let response = null;
       try {
         response = await axios.put(
-          "http://localhost:5001/student/uploadDoc",
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/student/uploadDoc",
           formData,
           {
             headers: {
