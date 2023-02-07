@@ -138,13 +138,9 @@ export default {
   margin-right: 1rem;
 }
 .container {
-  /* margin: 1rem; */
-  /* background-color: red; */
   height: 100%;
   display: flex;
   flex-direction: column;
-
-  /* overflow-y: scroll; */
 }
 
 .full {
@@ -184,7 +180,4 @@ export default {
   text-align: center;
   overflow-wrap: break-word;
 }
-/* .v-window {
-  height: 100% !important;
-} */
 </style>

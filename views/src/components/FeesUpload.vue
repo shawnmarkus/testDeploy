@@ -28,7 +28,7 @@ export default {
 
       selectedYear: "",
 
-      feesType: ["feewaiver", "hosteler", "nonhostler", "extra"],
+      feesType: ["feewaiver", "hosteller", "nonhostller", "extra"],
     };
   },
   created() {

@@ -10,15 +10,11 @@ export default {
       type: Object,
     },
   },
-  //   const emit = defineEmits(['update:items']),
   methods: {
     toggleActive() {
-      //   this.isActive.value = !this.isActive.value;
-      // this.$emit("update:isActive", !this.isActive.value);
       this.$emit("update:isActive", { value: !this.isActive.value });
     },
     setItemValue() {
-      // console.log("set Item hai ", this.setItem);
       this.isActive.selectedStudent = this.setItem;
     },
   },
