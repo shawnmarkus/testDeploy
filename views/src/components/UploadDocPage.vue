@@ -4,18 +4,20 @@ export default {
   data() {
     return {
       file: "",
+      feesAmount: 0,
+      fileNameYouSelected: "",
     };
   },
 
   methods: {
     async submitFile() {
       let formData = new FormData();
-
       formData.append("image", this.file);
+      formData.append("feesAmount", this.feesAmount);
       let response = null;
       try {
         response = await axios.put(
-          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/student/uploadDoc",
+          "http://localhost:5001/student/uploadDoc",
           formData,
           {
             headers: {
@@ -25,9 +27,9 @@ export default {
             crossDomian: true,
           }
         );
-
-        if (response.data.status === 200) {
+        if (response) {
           console.log("FILE UPLOADED SUCCESSFULLY");
+          this.$router.push("/");
         } else {
           console.log("FAILED TO UPLOADED");
         }
@@ -38,6 +40,7 @@ export default {
 
     handleFileUpload(event) {
       this.file = event.target.files[0];
+      this.fileNameYouSelected = event.target.files[0].name;
     },
   },
 };
@@ -47,10 +50,23 @@ export default {
   <div class="masterConatinerOfUploadPage">
     <div class="uploadSectionContainer left">
       <div class="container">
-        <label>
-          <v-icon></v-icon>
-          <input type="file" id="file" v-on:change="handleFileUpload" />
+        <label class="selectFile">
+          select file
+          <input
+            type="file"
+            required
+            id="file"
+            v-on:change="handleFileUpload"
+          />
         </label>
+        <p>{{ fileNameYouSelected }}</p>
+        <label>
+          <b>feesAmount</b>
+          <input type="number" required v-model="feesAmount" />
+        </label>
+
+        <!-- <h2>{{ feesAmount }}</h2> -->
+
         <v-btn class="btn" color="green" v-on:click="submitFile()"
           >Submit</v-btn
         >
@@ -68,6 +84,34 @@ export default {
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 15px #ffffff; */
   padding: 2.5rem;
+}
+
+label {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  background-color: rgba(206, 206, 206, 0.46);
+  padding: 0.7rem 0.75rem;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 0.7px solid black;
+  outline: 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.selectFile {
+  color: white;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+p {
+  margin: 1em 0;
 }
 
 .btn {
