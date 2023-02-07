@@ -41,6 +41,19 @@ export default {
         )
         .then((data) => {
           console.log("YOU GOT REGISTERED ", data);
+          this.formData.RollNumber = "";
+          this.formData.Name = "";
+          this.formData.batch = "";
+          this.formData.branch = "";
+          this.formData.confirmPswd = "";
+          this.formData.password = "";
+          this.formData.contactNumber = "";
+          this.formData.email = "";
+          this.formData.userRole = "";
+          this.formData.address = "";
+          this.formData.studentType = "";
+
+          // changing route
           this.$router.replace("/login");
         })
         .catch((error) => {

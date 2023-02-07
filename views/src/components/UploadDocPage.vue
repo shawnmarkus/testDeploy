@@ -29,7 +29,9 @@ export default {
         );
         if (response) {
           console.log("FILE UPLOADED SUCCESSFULLY");
-          this.$router.push("/");
+          this.file = "";
+          this.fileNameYouSelected = "";
+          this.feesAmount = 0;
         } else {
           console.log("FAILED TO UPLOADED");
         }
