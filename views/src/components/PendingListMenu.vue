@@ -5,13 +5,9 @@ export default {
     itemList: {
       type: Array,
     },
-    // selected: {
-    //   type: String,
-    //   // default: () => itemList.feesSubmittedDoc[0].doc_url,
-    // },
+
     selected: {
       type: Object,
-      // default: () => itemList.feesSubmittedDoc[0].doc_url,
     },
   },
 
@@ -43,14 +39,6 @@ export default {
 </script>
 
 <template>
-  <!-- <v-btn color="primary" @click="changeTheSelectedVlaue">click me</v-btn>
-  <v-btn variant="text" @click="chnageTheSelectedVlaue">Close</v-btn>
-  <div>Lorem40</div> -->
-
-  <!-- <ul>
-    <li v-for="(item, index) in itemList" :key="index">{{ item }}</li>
-  </ul> -->
-
   <div class="pa-4">
     <v-card
       variant="tonal"
@@ -58,11 +46,9 @@ export default {
       :key="index"
       :class="{
         selectedCardCss: SelectedCard(item._id),
-        // displayNone: item.status === 'verified',
         displayNone: checkDisplay(item.status),
       }"
     >
-      <!-- <v-card-item v-if="item.status === 'pending'"> -->
       <v-card-item>
         <v-card-title> Name : {{ item.doc_url }} </v-card-title>
 
@@ -82,8 +68,6 @@ export default {
           >
         </v-card-actions>
       </v-card-item>
-
-      <!-- <v-card-text> This is content </v-card-text> -->
     </v-card>
   </div>
 </template>

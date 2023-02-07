@@ -6,7 +6,6 @@ import axios from "axios";
 const store = createStore({
   state: {
     isLoggedIn: sessionStorage.getItem("isLoggedIn"),
-    // user: null,
     userRole: sessionStorage.getItem("userRole"),
   },
 
@@ -42,10 +41,6 @@ const store = createStore({
             crossDomain: true,
           }
         );
-        // .then(function (response) {
-        //   commit("setLoginDetail", response.data);
-        // })
-        // .catch((err) => console.log(err, "ye hai error"));
 
         if (response.status === 200) {
           commit("setLoginDetail", response.data);
@@ -54,12 +49,9 @@ const store = createStore({
         console.log("ERROR", err);
         throw err;
       }
-
-      //   console.log("logout action se ho gya bhai from store bol rha hu");
     },
 
     async logout({ commit }) {
-      //   var dd = "sjksaj";
       let resp = await axios
         .get(
           "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/logout",
@@ -75,8 +67,6 @@ const store = createStore({
         .catch((err) => console.log(err));
 
       console.log("logout ho gya bhai from store bol rha hu");
-      //   return "shivam";
-      //   commit("logout");
     },
   },
   getters: {

@@ -39,7 +39,6 @@ export default {
     ) {
       this.years.push(i);
     }
-    // console.log(this.years);
   },
 
   watch: {
@@ -73,7 +72,6 @@ export default {
           }
         );
 
-        // console.log(response);
         if (response.status === 401) {
           console.log("failed");
           window.location = "/login";
@@ -169,7 +167,6 @@ export default {
     </div>
 
     <v-dialog persistant v-model="isActive" width="600">
-      <!-- {{ feesFormData }} -->
       <v-card>
         <DialogForFeeUpload :formData="feesFormData" />
         <v-card-actions class="spaceBetween leftPadding">

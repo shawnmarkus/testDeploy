@@ -27,24 +27,12 @@ export default defineComponent({
       userFeesObject: props.userDataToRndr,
     };
   },
-
-  methods: {
-    print() {
-      console.log("||||||||||||", this.userFeesObject);
-    },
-  },
 });
 </script>
 
 <template>
   <div class="top">
-    <!-- <h1>preview previous Doc{{ this.userFeesObject }}</h1> -->
-
-    <!-- <button @click="print">hh</button> -->
-
-    <!-- <h1>preview previous Doc{{ this.userDataToRndr.feesDetail }}</h1> -->
     <Card :userFees="userFeesObject.feesDetail" />
-    <!-- <Card :feeDetail="someValue.feeDetail" /> -->
   </div>
 </template>
 

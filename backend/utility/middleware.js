@@ -5,8 +5,6 @@ this is our middleware file
 const bcrypt = require("bcrypt");
 const upload = require("../utility/multer");
 
-// const upload = multer.single("image");
-
 function confirmPswd(req, res, next) {
   if (req.password !== req.confirmPswd) {
     res.send("password doesn't match");

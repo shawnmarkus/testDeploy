@@ -53,7 +53,6 @@ const registerUsr = async (req, res) => {
           res.status(404).json({
             body: req.body,
             msg: `Error Occured :  ${error} with error code ${error}`,
-            // msg: "error occured : " + error.errmsg,
             state: "FAILED",
           });
           console.log(`Error Occured :  ${error} with error code ${error}`);
@@ -66,7 +65,6 @@ const registerUsr = async (req, res) => {
 
 // LOGIN
 const login = async (req, res) => {
-  // console.log("chitthi aayi hai");
   let userExist = await userModel.findOne({ RollNumber: req.body.RollNumber });
   console.log(req.body.RollNumber);
 
@@ -99,13 +97,10 @@ const login = async (req, res) => {
       secure: true,
     }); //taking the tenure of the cookies is equal to the life span of the jwt
 
-    return (
-      res
-        // .header("auth-token", usrToken)
-        .set("auth-token", usrToken)
-        .status(200)
-        .json({ usrToken, state: "LOGGED_IN", userRole: userExist.userRole })
-    );
+    return res
+      .set("auth-token", usrToken)
+      .status(200)
+      .json({ usrToken, state: "LOGGED_IN", userRole: userExist.userRole });
   }
 };
 

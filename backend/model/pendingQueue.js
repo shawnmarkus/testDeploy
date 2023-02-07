@@ -7,7 +7,6 @@ const schema = mongoose.Schema(
       type: [mongoose.Schema.Types.ObjectId],
       unique: true,
       ref: userModel,
-      // required: true,
     },
   },
   { collection: "pendingQueueCapstone" }

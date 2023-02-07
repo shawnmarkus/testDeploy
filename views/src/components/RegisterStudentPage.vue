@@ -1,5 +1,4 @@
 <script>
-// import { RouterLink } from "vue-router";
 import DialogForFeeUpload from "./DialogForFeesUpload.vue";
 import axios from "axios";
 
@@ -70,9 +69,6 @@ export default {
 
 <template>
   <div class="Register_master_container">
-    <!-- <div class="title">Register</div>
-    <hr /> -->
-
     <!-- register form -->
     <form @submit.prevent="submitForm">
       <!-- for userID or roll number-->
@@ -237,7 +233,6 @@ export default {
       >
       <!-- dialog -->
       <v-dialog persistant v-model="isActive" class="centerblock" width="600">
-        <!-- {{ feesFormData }} -->
         <v-card>
           <DialogForFeeUpload :formData="formData" />
           <v-card-actions class="leftPadding">

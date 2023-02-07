@@ -22,10 +22,8 @@ main {
 }
 
 .masterContainer {
-  /* text-align: center; */
   width: 80%;
   height: 80%;
-  /* background-color: red; */
   box-shadow: 5px 10px 10px 6px rgba(155, 155, 155, 0.585);
   border-radius: 5px;
   overflow: hidden;
@@ -36,7 +34,6 @@ main {
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  /* font-size: xx-larg; */
   font-weight: bold;
   box-shadow: 0px 2px 4px 1px rgba(155, 155, 155, 0.585);
 

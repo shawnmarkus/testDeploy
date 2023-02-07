@@ -22,8 +22,6 @@ export default defineComponent({
         .then((resp) => {
           data.list = resp.data.data[0].pendingRequestQueue;
           store.state["list"] = resp.data.data[0].pendingRequestQueue;
-          // data.errorToPass = resp.status;
-          // console.log("see what is the responce", resp.data);
         })
         .catch((error) => {
           console.log(error.message);
@@ -41,10 +39,7 @@ export default defineComponent({
     <div class="secondaryContainer">
       <h1>Verify Document</h1>
       <div class="lowerPart">
-        <!-- {{ this.data.list }} -->
-        <!-- <div v-if="data.list.length > 0"> -->
         <FeeLister :StudentListWithfeeDetail="data.list" :error="data.error" />
-        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -57,8 +52,6 @@ export default defineComponent({
   background-color: aliceblue;
   color: black;
   padding: 2.5rem;
-
-  /* overflow: scroll; */
 }
 
 .secondaryContainer {
@@ -70,7 +63,6 @@ export default defineComponent({
   color: white;
   font-weight: 600;
   background-color: hsla(160, 100%, 37%, 1);
-  /* color: hsla(160, 100%, 37%, 1); */
   font-size: 2.5rem;
 
   padding: 0.625rem 2.5rem;

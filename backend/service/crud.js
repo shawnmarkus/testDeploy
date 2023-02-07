@@ -8,8 +8,6 @@ const feesModel = require("../model/feesModel");
 const pendingQueue = require("../model/pendingQueue");
 const cloudinary = require("../utility/cloudinary");
 
-// const path = require("path");
-
 /* operation of admin */
 // upload fees
 
@@ -29,8 +27,6 @@ const feesUpload = async (req, res) => {
   const { currentSession, feesType, feesdata } = req.body;
 
   // for creating a index
-  // await feesModel.index({ currentSession: 1, feesType: 1 }, { unique: true });
-
   // throwing query
   await feesModel
     .create({
@@ -81,7 +77,6 @@ const verifyDoc = async (req, res) => {
             _id: req.body.id,
           },
           {
-            // "feesDetail.feesSubmittedDoc.doc_url": req.body.fileHashName,
             "feesDetail.feesSubmittedDoc._id": req.body.docId,
           },
         ],
@@ -97,7 +92,6 @@ const verifyDoc = async (req, res) => {
     )
     .then((data) => {
       return res.json({
-        // changes made on 28 JAN
         data: data,
         msg: "mila hai specific file ",
         status: "SUCCESS",
@@ -151,10 +145,6 @@ const uploadDoc = async (req, res) => {
     // since the result contain  the uri and that need to be updated in Doc_url
     // on 29 JAN using cloudinary
 
-    // let ob = JSON.stringify(req.body);
-    // console.log(
-    //   `the feeDocFile => ${req.file.path}\n and the feesAmount is ${req.body.feesAmount} \n ======================================\nand the req =>${ob} \n ==============================================\n`
-    // );
     const result = await cloudinary.uploader.upload(req.file.path);
 
     if (!result) {
@@ -166,7 +156,6 @@ const uploadDoc = async (req, res) => {
     }
 
     // and we are successfully setting the image url in response
-    //end of 29JAN
 
     const uploadedResult = await userModel.findOneAndUpdate(
       { _id: req.userState._id },
@@ -176,7 +165,6 @@ const uploadDoc = async (req, res) => {
             $each: [
               { feesAmount: req.body.feesAmount, doc_url: result.secure_url },
             ],
-            // $each: [{ feesAmount: 2000, doc_url: req.file.filename }],
           },
         },
       },
@@ -202,7 +190,6 @@ const uploadDoc = async (req, res) => {
       )
       .then((data) => {
         console.log(`data in pending Queue is ===> ${JSON.stringify(data)}`);
-        // return res.send(`hey you made it :: ${data}`);
         return res.status(200).json({
           dataofUploadedDoc: uploadedResult,
           dataOfQueue: data,
@@ -218,41 +205,6 @@ const uploadDoc = async (req, res) => {
           errmsg: `try in right way :: ${err}`,
         });
       });
-
-    // return res.json({
-    //   updateObject: uploadedResult,
-    //   resp: req.file.path,
-    // });
-
-    // the marked code under a line was already commented
-    // ----------------------------------------------------------------------------
-    // const isExit = await pendingQueue.findOne({ pendingRequestQueue: id });
-
-    // if (isExit) {
-    //   res.send("already exist in queue");
-    // } else {
-    //   await pendingQueue
-    //     .findOneAndUpdate(
-    //       {},
-    //       { $push: { pendingRequestQueue: id } },
-    //       { returnOriginal: false }
-    //     )
-    //     .then((data) => {
-    //       console.log("data entered in queue :", data);
-    //       res.json({
-    //         data,
-    //         msg: "added to queue",
-    //       });
-    //     })
-    //     .catch((err) => {
-    //       console.log("data doesn't entered in queue :", err);
-    //       res.json({
-    //         msg: err,
-    //       });
-    //     });
-    // }
-
-    // ----------------------------------------------------------------------------
   } catch (error) {
     console.log("executing the error segment");
     return res.json({
@@ -262,9 +214,6 @@ const uploadDoc = async (req, res) => {
     });
   }
 };
-
-// generate request to verify
-// function genRequest(req, res) {}
 
 // update info
 const updateDetails = async (req, res) => {
@@ -356,13 +305,10 @@ async function getStudentData(req, res) {
     }
 
     const extractExactFeeList = feelist.filter((obj) => {
-      // console.log(`the object parsed is ${obj}`);
       return (
         obj.feesType === "extra" || obj.feesType === userDetail.studentType
       );
     });
-
-    // console.log(`extracted list of fees ${extractExactFeeList}`);
 
     // now parse through each data and then check on basis of students batch and add to object to return
     let feesDataOfStd = {};

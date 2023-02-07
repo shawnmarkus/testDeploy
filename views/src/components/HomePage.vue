@@ -58,15 +58,12 @@ export default {
 
 <style scoped>
 .Details {
-  /* width: 70%;
-  height: calc(calc(100% - 1rem) / 2); */
   width: 95%;
   height: 95%;
   padding: 0rem 2.5rem 0 2.5rem;
   border-radius: 1.25rem;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 15px #ffffff;
-  /* overflow-y: scroll; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -84,7 +81,6 @@ export default {
   align-items: center;
   position: sticky;
   top: 0;
-  /* z-index: 10; */
   padding: 1.25rem;
 }
 

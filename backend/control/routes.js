@@ -76,9 +76,6 @@ routePath
   .post(verifyToken, feesUpload)
   .delete(verifyToken, removeStdFromQueue);
 
-// remove student by admin
-// routePath.route("/admin").delete(verifyToken, removeStdFromQueue);
-
 // ------------end-----------------
 // export module
 module.exports = routePath;

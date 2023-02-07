@@ -1,5 +1,4 @@
 <script>
-import { RouterLink } from "vue-router";
 import store from "../warehouse/store";
 import VTabsForForgotPasswrd from "./VTabsForForgotPasswrd.vue";
 
@@ -33,7 +32,6 @@ export default {
         .catch((error) => {
           this.alert = true;
           this.error = error.message;
-          // console.log(error.message);
 
           // this is set to remove the error message
           setTimeout(() => {
@@ -50,7 +48,6 @@ export default {
   <div class="Login_master_container">
     <div class="title">Login</div>
     <hr />
-    <!-- <div v-if="error">{{ error }}</div> -->
 
     <v-alert
       v-model="alert"
@@ -61,10 +58,6 @@ export default {
       :text="error"
     >
     </v-alert>
-
-    <!-- <div v-if="!alert" class="text-center">
-      <v-btn @click="alert = true"> Reset </v-btn>
-    </div> -->
 
     <!-- login form -->
     <form @submit.prevent="sendRequest">
@@ -100,22 +93,15 @@ export default {
         <!-- dialog box  -->
         <div class="text-center">
           <v-dialog v-model="dialog">
-            <!-- <v-card-actions> -->
-            <!-- <v-btn color="red"  @click="dialog = false">Close </v-btn> -->
-            <!-- </v-card-actions> -->
             <template v-slot:activator="{ props }">
               <v-btn class="showModel" v-bind="props"> forgot Password </v-btn>
             </template>
 
             <v-card class="dialogBoxForEmail">
               <VTabsForForgotPasswrd />
-              <!-- <v-card-actions>
-                <v-btn color="red" block @click="dialog = false">Close </v-btn>
-              </v-card-actions> -->
             </v-card>
           </v-dialog>
         </div>
-        <!-- end -->
         <div class="register-div">
           <div>New here? &nbsp;</div>
           <RouterLink to="/register">Register</RouterLink>
@@ -131,7 +117,6 @@ export default {
   font-family: "Times New Roman", Times, serif;
   font-size: 1.9rem;
   padding-left: 0.75rem;
-  /* border-bottom: 1px solid rgba(2, 2, 2, 0.55); */
 }
 hr {
   margin: 0.75rem 0 0.75rem 0;

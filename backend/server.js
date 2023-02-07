@@ -5,15 +5,8 @@ const routes = require("./control/routes");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { none } = require("./utility/multer");
 
 // for verification of token
-// const verifyToken = require("./utility/verifyToken");
-
-// -----------------------------------------------------------
-// to test
-// const postData = require("./post");
-// -----------------------------------------------------------
 
 // putting the env variables
 dotenv.config({ path: "./constant/secrets/config.env" });
@@ -25,7 +18,6 @@ try {
   console.log("error hai bro", error);
 }
 
-// console.log(process.env.EMAIL_SERVICE);
 // creating express instance
 var app = express();
 
@@ -45,9 +37,6 @@ app.use(routes);
 
 // home page
 app.get("/", (req, res) => res.send("hello boy"));
-
-// // test post
-// app.use("/post", verifyToken, postData);
 
 // listening port
 app.listen(process.env.PORT, (error) => {

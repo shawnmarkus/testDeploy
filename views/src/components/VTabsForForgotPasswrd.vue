@@ -59,9 +59,6 @@ export default {
         this.isEligible = true;
         this.changeTheTab("tab-2");
       }
-      //   if (response) {
-      //     console.log(response.status);
-      //   }
     },
 
     async verifyOTP() {
@@ -77,7 +74,7 @@ export default {
 
       let response = await axios
         .post(
-          "http://localhost:5001/verifyOTP",
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/verifyOTP",
           { OTP: this.OTP },
           {
             withCredentials: true,
@@ -98,7 +95,6 @@ export default {
       if (response && response.status === 200) {
         this.canCreatePasswrd = true;
         this.canOTPbeSend = false;
-        // console.log("this is the response ", response.status);
         this.changeTheTab("tab-3");
       }
     },
@@ -114,7 +110,7 @@ export default {
 
       let response = await axios
         .put(
-          "http://localhost:5001/resetpassword",
+          "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/resetpassword",
           { email: this.email, password: this.passwrd },
           {
             withCredentials: true,
@@ -154,7 +150,6 @@ export default {
     </v-alert>
 
     <v-tabs height="75" v-model="tab" bg-color="#00bd7e">
-      <!-- <v-tag></v-tag> -->
       <v-tab value="tab-1" :disabled="this.isEligible !== false">
         <div class="v-tabs">email</div>
       </v-tab>
@@ -217,11 +212,9 @@ export default {
             placeholder="confirm password"
             v-model="confirmPasswrd"
           />
-          <!-- <v-card-actions class="leftPadding"> -->
           <v-btn class="btn" color="green" @click="sendRequestToChangePassword"
             >Done</v-btn
           >
-          <!-- </v-card-actions> -->
         </v-card>
       </v-window-item>
     </v-window>

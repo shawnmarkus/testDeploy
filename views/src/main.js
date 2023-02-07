@@ -19,6 +19,7 @@ const app = createApp(App);
 
 app.use(router);
 app.use(vuetify);
+
 // use store
 app.use(store);
 

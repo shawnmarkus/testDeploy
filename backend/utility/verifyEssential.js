@@ -28,7 +28,6 @@ const verifyEssentialDetail = async (req, res) => {
   };
 
   const OTP = getCorrectOtp();
-  // console.log(OTP);
 
   const message = `
     <h2> you have requested OTP that is ${OTP}  </h2>
@@ -74,10 +73,6 @@ const verifyEssentialDetail = async (req, res) => {
   //   });
 };
 
-// async function tt(req, res) {
-//   console.log("mc\n");
-// }
-
 const verifyOTP = async (req, res) => {
   console.log(req.cookies);
   const { OTP_TOKEN } = req.cookies;
@@ -108,5 +103,4 @@ const verifyOTP = async (req, res) => {
   }
 };
 
-// module.exports = { verifyEssentialDetail, verifyOTP };
 module.exports = { verifyEssentialDetail, verifyOTP };

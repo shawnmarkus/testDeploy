@@ -18,7 +18,6 @@ export default defineComponent({
     });
 
     onBeforeMount(async () => {
-      // console.log("pehle aaya ");
       let response = await axios
         .get(
           "https://backendfyndcapstoneproject-shawnmarkus.onrender.com/student",
@@ -37,33 +36,20 @@ export default defineComponent({
         });
 
       if (response) {
-        // .then((resp) => {
         data.detail = Object(response.data.userDetail);
         data.feesDetail = Object(response.data.feesDataOfStd);
-        // data.submittedFees = Object(
-        //   response.data.userDetail.feesDetail.feesSubmittedDoc
-        // );
 
         for (let i of response.data.userDetail.feesDetail.feesSubmittedDoc) {
           if (i.status === "verified") {
             data.submittedFees += i.feesAmount;
           }
-          // console.log(i);
         }
-        // for()
-        // console.log("see what is the responce", resp.data);
-        // console.log("see what is the responce", data.feesDetail);
-        // })
       }
     });
 
     const print = () => {
       console.log(data.submittedFees);
     };
-
-    // onMounted(() => {
-    //   console.log("pura hone ke baad aaya hu", typeof data.detail);
-    // });
 
     return { data, print };
   },
@@ -93,17 +79,12 @@ export default defineComponent({
             <b> year {{ index }} fees : </b> {{ item }}
           </div>
           <hr class="horizontalPad" />
-          <div>
-            <b> Amount You Submitted : </b> {{ data.submittedFees }}
-            <!-- <v-btn @click="print">click me</v-btn> -->
-          </div>
+          <div><b> Amount You Submitted : </b> {{ data.submittedFees }}</div>
         </div>
       </div>
       <div class="previewOfDoc centerTheContent">
         <PreviewOfPrevDoc :userDataToRndr="data.detail" />
       </div>
-
-      <!-- <div>{{ JSON.stringify(data.detail) }}</div> -->
     </div>
   </main>
 </template>
@@ -155,11 +136,6 @@ main {
 .enclosingContainer {
   width: 100%;
   height: 100%;
-  /* display: flex;
-  flex-direction: column;
-  place-items: center;
-  place-content: center; */
-
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;

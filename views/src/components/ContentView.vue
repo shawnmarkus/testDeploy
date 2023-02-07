@@ -13,33 +13,16 @@ export default {
   data() {
     return {
       selected: {
-        // selectedCardId:
-        //   this.isActive.selectedStudent.feesDetail
-        //     .feesSubmittedDoc[0]._id,
-        // imageSrc:
-        //   this.isActive.selectedStudent.feesDetail
-        //     .feesSubmittedDoc[0].doc_url,
-
         selectedCardId: "",
         imgSrc: "",
       },
 
-      // newly added on 30JAN
       pendingDocList: this.isActive.selectedStudent.feesDetail.feesSubmittedDoc,
     };
   },
 
   mounted() {
-    // this.selected.selectedCardId =
-    //   this.isActive.selectedStudent.feesDetail.feesSubmittedDoc.filter(
-    //     (dataChunk) => dataChunk.status === "pending"
-    //   )[0]._id;
-
-    for (const [key, value] of Object.entries(
-      // this.isActive.selectedStudent.feesDetail.feesSubmittedDoc
-      this.pendingDocList
-    )) {
-      // console.log("repeated", key, value);
+    for (const [key, value] of Object.entries(this.pendingDocList)) {
       if (value.status === "pending") {
         this.selected.selectedCardId = value._id;
         this.selected.imgSrc = value.doc_url;
@@ -52,7 +35,6 @@ export default {
     closeTheDialog() {
       // you can change the value in either way but the parent must have @update:propsName="(value) => (propsName= value)" property corresponding to it or v-model:propsName="vale"
       this.$emit("update:isActive", { value: false });
-      // this.isActive.value = false;
     },
 
     updateSelected(newValue) {
@@ -79,8 +61,6 @@ export default {
         }
       );
 
-      // console.log("docStatusResponse : ", docStatusResponse);
-
       // function to remove the appproved item from pending status doc list and that is update in isActive.selectedStudent.feesDetail.feesSubmittedDoc
       if (docStatusResponse.data.status === "SUCCESS") {
         console.log(
@@ -88,14 +68,11 @@ export default {
           this.pendingDocList.length
         );
 
-        this.pendingDocList =
-          // this.isActive.selectedStudent.feesDetail.feesSubmittedDoc
-          this.pendingDocList.filter((data) => {
-            if (data._id === valueSet.docId) {
-              // console.log("IS MATCHING ======>", data._id === valueSet.docId);
-              return false;
-            } else return true;
-          });
+        this.pendingDocList = this.pendingDocList.filter((data) => {
+          if (data._id === valueSet.docId) {
+            return false;
+          } else return true;
+        });
 
         console.log(
           "LENGTH OF THE PENDING DOC LIST AFTER ==>",
@@ -124,8 +101,6 @@ export default {
             break;
           }
         }
-
-        // this.$emit("update:isActive", { filteredArrray: filteredArrayOfDoc });
       }
     },
   },
@@ -143,8 +118,6 @@ export default {
         <v-btn class="btn" variant="text" @click="closeTheDialog">Close</v-btn>
       </v-card-actions>
     </v-toolbar>
-    <!-- <v-card-text> -->
-    <!-- <v-row> -->
     <div class="templateGridOfContent">
       <div class="left">
         <div class="insiderLeft">
@@ -161,24 +134,8 @@ export default {
       </div>
       <!-- right block -->
       <div class="right">
-        <!-- {{ selected }} -->
         <div class="rightUpper d-flex justify-center align-center">
           <!-- image -->
-
-          <!-- <v-img
-            class="bg-white"
-            width="300"
-            :aspect-ratio="1"
-            :src="imgSrc"
-          ></v-img> -->
-
-          <!-- <v-img
-            class="bg-white"
-            width="540"
-            :aspect-ratio="1"
-            src="https://res.cloudinary.com/dsbnu2xbu/image/upload/v1674961981/wf7v2z7xgvswyxbl39sh.png"
-          ></v-img> -->
-
           <v-img
             class="bg-white"
             width="100"
@@ -188,7 +145,6 @@ export default {
         </div>
         <div class="rightLower">
           <!-- buttons to accept ot reject -->
-
           <v-card-actions class="justify-end">
             <v-btn
               class="btn"
@@ -218,8 +174,6 @@ export default {
         </div>
       </div>
     </div>
-    <!-- </v-row> -->
-    <!-- </v-card-text> -->
   </v-card>
 </template>
 
@@ -247,7 +201,6 @@ export default {
   padding-bottom: 1.25rem;
 }
 .right {
-  /* background-color: blue; */
   box-shadow: inset 0 0 20px 10px rgb(162, 162, 162);
   max-height: calc(100vh - 5rem);
   padding: 2.5rem;

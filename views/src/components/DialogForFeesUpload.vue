@@ -57,10 +57,6 @@ export default {
 </template>
 
 <style scoped>
-/* .flexBoxProperty {
-  display: flex;
-  background: red;
-} */
 .pad-left {
   padding-left: 1.25rem;
 }

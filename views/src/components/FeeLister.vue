@@ -200,12 +200,6 @@ export default defineComponent({
         transition="dialog-bottom-transition"
         v-model="data.isActive.value"
       >
-        <!-- <ContentView
-          v-if="data.isActive.value"
-          :isActive="data.isActive"
-          @update:isActive="(value) => (data.isActive.value = value)"
-        /> -->
-
         <ContentView
           v-if="data.isActive.value"
           :isActive="data.isActive"
@@ -226,14 +220,10 @@ export default defineComponent({
   display: grid;
   grid-template-columns: auto 8rem 8rem;
   margin-bottom: 1.25rem;
-  /* justify-content: space-between;
-  
-  align-items: center; */
 }
 
 .leftSideDetail {
   align-self: center;
-  /* justify-content: flex-start; */
   justify-self: flex-start;
   padding-left: 2.5rem;
 }
@@ -243,7 +233,6 @@ export default defineComponent({
 
 .middleTheLoader {
   text-align: center;
-  /* background-color: red; */
 }
 
 .v-list-subheader {

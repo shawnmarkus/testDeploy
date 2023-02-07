@@ -67,8 +67,6 @@ export default {
           <input type="number" required v-model="feesAmount" />
         </label>
 
-        <!-- <h2>{{ feesAmount }}</h2> -->
-
         <v-btn class="btn" color="green" v-on:click="submitFile()"
           >Submit</v-btn
         >
@@ -82,9 +80,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 1rem;
-  background: #e0e0e0;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 15px #ffffff; */
   padding: 2.5rem;
 }
 
@@ -132,16 +127,6 @@ input {
   padding: 1.25rem;
 }
 
-/* .btn {
-  border: 2px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 0.25rem 1rem;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-} */
-
 ::-webkit-scrollbar {
   width: 0.4em;
   background-color: #f5f5f5;
@@ -150,7 +135,4 @@ input {
 ::-webkit-scrollbar-thumb {
   background-color: #797979c0;
 }
-/* .uploadSectionContainer {
-  padding: 2rem;
-} */
 </style>
