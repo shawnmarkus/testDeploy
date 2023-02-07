@@ -151,7 +151,10 @@ const uploadDoc = async (req, res) => {
     // since the result contain  the uri and that need to be updated in Doc_url
     // on 29 JAN using cloudinary
 
-    console.log(req.file.path);
+    // let ob = JSON.stringify(req.body);
+    // console.log(
+    //   `the feeDocFile => ${req.file.path}\n and the feesAmount is ${req.body.feesAmount} \n ======================================\nand the req =>${ob} \n ==============================================\n`
+    // );
     const result = await cloudinary.uploader.upload(req.file.path);
 
     if (!result) {
@@ -170,7 +173,9 @@ const uploadDoc = async (req, res) => {
       {
         $push: {
           "feesDetail.feesSubmittedDoc": {
-            $each: [{ feesAmount: 2000, doc_url: result.secure_url }],
+            $each: [
+              { feesAmount: req.body.feesAmount, doc_url: result.secure_url },
+            ],
             // $each: [{ feesAmount: 2000, doc_url: req.file.filename }],
           },
         },
@@ -249,6 +254,7 @@ const uploadDoc = async (req, res) => {
 
     // ----------------------------------------------------------------------------
   } catch (error) {
+    console.log("executing the error segment");
     return res.json({
       status:
         "FAILED TO ACCOMPLISH TASK EITHER TO UPLOAD OR UPDATE THE PENDING DATA SET",
