@@ -54,6 +54,7 @@ const verifyEssentialDetail = async (req, res) => {
       .cookie("OTP_TOKEN", verificationToken, {
         httpOnly: true,
         maxAge: 60 * 1000 * 10,
+        sameSite: "None",
       })
       .json({
         msg: "OTP sent",
