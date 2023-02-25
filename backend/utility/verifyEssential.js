@@ -55,6 +55,7 @@ const verifyEssentialDetail = async (req, res) => {
         httpOnly: true,
         maxAge: 60 * 1000 * 10,
         sameSite: "None",
+        secure: true,
       })
       .json({
         msg: "OTP sent",
